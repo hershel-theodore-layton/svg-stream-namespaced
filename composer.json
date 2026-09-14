@@ -9,8 +9,7 @@
   "require-dev": {
     "hershel-theodore-layton/portable-hack-ast-linters-server": ">=0.5.4 <1",
     "hershel-theodore-layton/test-chain": "<1",
-    "hershel-theodore-layton/expect": "<1",
-    "hershel-theodore-layton/html-stream-namespaced": "^2.3.1"
+    "hershel-theodore-layton/expect": "<1"
   },
   "config": {
     "allow-plugins": {

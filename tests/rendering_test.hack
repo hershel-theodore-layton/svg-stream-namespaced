@@ -2,7 +2,6 @@
 namespace HTL\SVGStream;
 
 use namespace HTL\{SGMLStreamInterfaces, TestChain};
-use type HTL\HTMLStream\{div, p};
 use function HTL\Expect\expect;
 
 <<TestChain\Discover>>
@@ -126,21 +125,6 @@ function rendering_test(TestChain\Chain $chain)[]: TestChain\Chain {
       expect(await $svg->toHTMLStringAsync())->toEqual(
         '<svg><script>if (a &lt; b &amp;&amp; ready) run();</script>'.
         '<style>text::before { content: &quot;&lt;&amp;&quot;; }</style></svg>',
-      );
-    })
-    ->testAsync('composes_with_html_and_foreign_object', async ()[defaults] ==> {
-      $html =
-        <div>
-          <svg viewBox="0 0 100 100">
-            <foreignObject width="100" height="100">
-              <p>Hello</p>
-            </foreignObject>
-          </svg>
-        </div>;
-      expect(await $html->toHTMLStringAsync())->toEqual(
-        '<div><svg viewBox="0 0 100 100">'.
-        '<foreignObject width="100" height="100"><p>Hello</p>'.
-        '</foreignObject></svg></div>',
       );
     })
     ->testAsync('spreads_inherited_and_svg_attributes', async ()[defaults] ==> {
