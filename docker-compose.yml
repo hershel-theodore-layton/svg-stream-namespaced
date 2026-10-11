@@ -9,4 +9,9 @@ services:
         source: .
         target: /mnt/project
     ports:
-      - 127.0.0.1::10641
+      - 48569:10641
+
+networks:
+  default:
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
