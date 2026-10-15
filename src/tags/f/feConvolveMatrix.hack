@@ -6,7 +6,7 @@ namespace HTL\SVGStream;
 use namespace HTL\SGMLStream;
 use type HTL\Pragma\Pragmas;
 
-<<file: Pragmas(vec['PhaLinters', 'digest:0a0a956ebb15ef4930d3'])>>
+<<file: Pragmas(vec['PhaLinters', 'digest:3d3b35e2a33254798d02'])>>
 
 /**
  * @see https://drafts.csswg.org/filter-effects-1/#elementdef-feconvolvematrix
@@ -36,7 +36,7 @@ final xhp class feConvolveMatrix extends SVGElementBase {
     /**
      * @see https://drafts.csswg.org/filter-effects-1/#element-attrdef-feconvolvematrix-edgemode
      */
-    enum {'duplicate', 'wrap', 'none'} edgeMode,
+    enum {'duplicate', 'wrap', 'none', 'mirror'} edgeMode,
     /**
      * @see https://drafts.csswg.org/filter-effects-1/#elementdef-feconvolvematrix
      * A legacy presentation attribute retained in this module's element summary.

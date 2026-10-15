@@ -79,13 +79,14 @@ function rendering_test(TestChain\Chain $chain)[]: TestChain\Chain {
     ->testAsync('svg_booleans_have_literal_values', async ()[defaults] ==> {
       $filter =
         <filter>
-          <feConvolveMatrix preserveAlpha="false" />
+          <feConvolveMatrix edgeMode="mirror" preserveAlpha="false" />
           <feImage externalResourcesRequired="true" href="a.svg" />
           <feBlend no-composite="no-composite" mode="multiply" />
           <feGaussianBlur edgeMode="mirror" stdDeviation="2 3" />
         </filter>;
       expect(await $filter->toHTMLStringAsync())->toEqual(
-        '<filter><feConvolveMatrix preserveAlpha="false"></feConvolveMatrix>'.
+        '<filter><feConvolveMatrix edgeMode="mirror" preserveAlpha="false">'.
+        '</feConvolveMatrix>'.
         '<feImage externalResourcesRequired="true" href="a.svg"></feImage>'.
         '<feBlend no-composite="no-composite" mode="multiply"></feBlend>'.
         '<feGaussianBlur edgeMode="mirror" stdDeviation="2 3">'.
